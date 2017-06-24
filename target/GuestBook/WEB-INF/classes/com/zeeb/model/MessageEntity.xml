@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="com.zeeb.model.MessageEntity">
+        <table name="message" schema="guestbook" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="id" precision="11"/>
+            </id>
+            <basic name="title">
+                <column name="title"/>
+            </basic>
+            <basic name="content">
+                <column name="content"/>
+            </basic>
+            <basic name="createTime">
+                <column name="create_time" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="deleted">
+                <column name="deleted" precision="2"/>
+            </basic>
+            <many-to-one name="categoryByCategoryId" optional="true" target-entity="com.zeeb.model.CategoryEntity">
+                <join-column name="category_id" referenced-column-name="id"/>
+            </many-to-one>
+        </attributes>
+    </entity>
+</entity-mappings>

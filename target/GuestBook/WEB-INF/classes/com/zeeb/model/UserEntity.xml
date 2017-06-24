@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="com.zeeb.model.UserEntity">
+        <table name="user" schema="guestbook" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="id" precision="11"/>
+            </id>
+            <basic name="name">
+                <column name="name"/>
+            </basic>
+            <basic name="sex">
+                <column name="sex" nullable="false"/>
+            </basic>
+            <basic name="nickname">
+                <column name="nickname" nullable="false"/>
+            </basic>
+            <basic name="phone">
+                <column name="phone" nullable="false"/>
+            </basic>
+            <basic name="password">
+                <column name="password"/>
+            </basic>
+            <basic name="createTime">
+                <column name="create_time" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="lastloginTime">
+                <column name="lastlogin_time" nullable="false" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

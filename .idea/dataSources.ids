@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - guestbook@localhost" uuid="9a8bd61f-707e-432f-b077-7e00d08e7987">
+    <database-info product="MySQL" version="5.6.32" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="guestbook">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="ahelp"/>
+      <schema id="3" name="blog"/>
+      <schema id="4" name="crmspmvc"/>
+      <schema id="5" name="df"/>
+      <schema id="6" name="gbook"/>
+      <schema id="7" name="giit"/>
+      <schema id="8" name="information_schema"/>
+      <schema id="9" name="mall2"/>
+      <schema id="10" name="mall3"/>
+      <schema id="11" name="message"/>
+      <schema id="12" name="mysql"/>
+      <schema id="13" name="old_5d"/>
+      <schema id="14" name="old_guanwang"/>
+      <schema id="15" name="performance_schema"/>
+      <schema id="16" name="springdemo"/>
+      <schema id="17" name="springmvc"/>
+      <schema id="18" name="springmvc1"/>
+      <schema id="19" name="test"/>
+      <schema id="20" name="test2"/>
+      <table id="21" parent="1" name="category"/>
+      <table id="22" parent="1" name="message"/>
+      <table id="23" parent="1" name="user"/>
+      <table id="24" parent="1" name="user_group"/>
+      <column id="25" parent="21" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="26" parent="21" name="name">
+        <comment>留言分类名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="27" parent="21" name="description">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="28" parent="21" name="deleted">
+        <mandatory>1</mandatory>
+        <data-type>int(2)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="29" parent="21" name="create_time">
+        <data-type>datetime|0</data-type>
+      </column>
+      <key id="30" parent="21" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="31" parent="22" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="32" parent="22" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="33" parent="22" name="content">
+        <comment>留言内容</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="34" parent="22" name="create_time">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="35" parent="22" name="deleted">
+        <mandatory>1</mandatory>
+        <data-type>int(2)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="36" parent="22" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="37" parent="22" name="category_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <index id="38" parent="22" name="FKb3y6etti1cfougkdr0qiiemgv">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="39" parent="22" name="FKt8oeaa9w0ck1n1pcac8n8sf23">
+        <columns>category_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="40" parent="22" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="41" parent="22" name="FKb3y6etti1cfougkdr0qiiemgv">
+        <columns>user_id</columns>
+        <ref-key>~.user.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="42" parent="22" name="fk_message_user">
+        <columns>user_id</columns>
+        <ref-key>~.user.PRIMARY</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="43" parent="22" name="FKt8oeaa9w0ck1n1pcac8n8sf23">
+        <columns>category_id</columns>
+        <ref-key>~.category.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="44" parent="22" name="fk_message_category">
+        <columns>category_id</columns>
+        <ref-key>~.category.PRIMARY</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <column id="45" parent="23" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="46" parent="23" name="name">
+        <comment>登录昵称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="47" parent="23" name="sex">
+        <comment>性别</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="48" parent="23" name="user_group_id">
+        <comment>分组id</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="49" parent="23" name="nickname">
+        <comment>别名</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="50" parent="23" name="phone">
+        <comment>手机号</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="51" parent="23" name="password">
+        <comment>密码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="52" parent="23" name="create_time">
+        <comment>创建时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="53" parent="23" name="lastlogin_time">
+        <comment>最后登录时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <index id="54" parent="23" name="FKd5uhmsqhax1l70pck9lmgphjr">
+        <columns>user_group_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="55" parent="23" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="56" parent="23" name="FKd5uhmsqhax1l70pck9lmgphjr">
+        <columns>user_group_id</columns>
+        <ref-key>~.user_group.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="57" parent="23" name="fk_user_group">
+        <columns>user_group_id</columns>
+        <ref-key>~.user_group.PRIMARY</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <column id="58" parent="24" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="59" parent="24" name="name">
+        <comment>分组名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="60" parent="24" name="deleted">
+        <mandatory>1</mandatory>
+        <data-type>int(2)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="61" parent="24" name="create_time">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="62" parent="24" name="description">
+        <comment>分组描述</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <key id="63" parent="24" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
