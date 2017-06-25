@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Collection;
 
 /**
- * Created by cain on 17/6/24.
+ * Created by cain on 17/6/25.
  */
 @Entity
 @Table(name = "user", schema = "guestbook", catalog = "")
@@ -18,6 +18,7 @@ public class UserEntity {
     private String password;
     private Timestamp createTime;
     private Timestamp lastloginTime;
+    private String email;
     private Collection<MessageEntity> messagesById;
     private UserGroupEntity userGroupByUserGroupId;
 
@@ -101,6 +102,16 @@ public class UserEntity {
         this.lastloginTime = lastloginTime;
     }
 
+    @Basic
+    @Column(name = "email", nullable = false, length = 50)
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -117,6 +128,7 @@ public class UserEntity {
         if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) return false;
         if (lastloginTime != null ? !lastloginTime.equals(that.lastloginTime) : that.lastloginTime != null)
             return false;
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
 
         return true;
     }
@@ -131,6 +143,7 @@ public class UserEntity {
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
         result = 31 * result + (lastloginTime != null ? lastloginTime.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
     }
 

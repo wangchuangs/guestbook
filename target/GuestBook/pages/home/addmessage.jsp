@@ -25,7 +25,7 @@
     <![endif]-->
 </head>
 <body>
-<c:import url="header.jsp" charEncoding="UTF-8"></c:import>
+<c:import url="../main/header.jsp" charEncoding="UTF-8"></c:import>
 <div class="container">
     <h1>添加留言</h1>
     <hr/>

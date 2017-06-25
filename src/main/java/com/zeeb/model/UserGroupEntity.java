@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Collection;
 
 /**
- * Created by cain on 17/6/24.
+ * Created by cain on 17/6/25.
  */
 @Entity
 @Table(name = "user_group", schema = "guestbook", catalog = "")

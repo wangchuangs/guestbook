@@ -21,7 +21,7 @@
     <![endif]-->
 </head>
 <body>
-<c:import url="header.jsp" charEncoding="UTF-8"></c:import>
+<c:import url="../main/header.jsp" charEncoding="UTF-8"></c:import>
 
 <div class="container">
 
@@ -68,22 +68,14 @@
             </div>
         </div><!--/.sidebar-offcanvas-->
     </div><!--/row-->
-
-    <hr>
-
-    <footer>
-        <p>© Company 2017</p>
-    </footer>
-
+    <c:import url="../main/footer.jsp"/>
 </div><!--/.container-->
-
-
-</body>
 
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>

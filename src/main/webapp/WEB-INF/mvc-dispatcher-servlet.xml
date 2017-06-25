@@ -32,7 +32,7 @@
 
     <jpa:repositories base-package="com.zeeb.repository"/>
 
-    <!-- 链接到persistence.xml -->
+     <!--链接到persistence.xml -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
         <property name="persistenceUnitName" value="PersistenceUnit"/>
     </bean>

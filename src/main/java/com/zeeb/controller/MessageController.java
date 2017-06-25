@@ -25,13 +25,14 @@ import java.util.List;
 
 public class MessageController {
     // 自动装配数据库接口，不需要再写原始的Connection来操作数据库
-    @Autowired
-    MessageRepository messageRepository;
+   @Autowired
+   MessageRepository messageRepository;
     @Autowired
     UserRepository userRepository;
     @Autowired
     CategoryRepository categoryRepository;
-//返回首页
+
+        //返回首页
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String getMessage(ModelMap modelMap) {
         // 查询message表中所有记录

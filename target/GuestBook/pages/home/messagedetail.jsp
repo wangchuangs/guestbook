@@ -22,7 +22,7 @@
 
 </head>
 <body>
-<c:import url="header.jsp" charEncoding="UTF-8"></c:import>
+<c:import url="../main/header.jsp" charEncoding="UTF-8"></c:import>
 <div class="container">
     <h1>留言详情</h1>
     <hr/>
